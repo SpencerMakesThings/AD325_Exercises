@@ -75,7 +75,7 @@ class LinkedDeque:
             current = self.head # a pointer to travers the deque
             outputList = []     # a list to return
             while current:      # while there are elements left in deque
-                outputList.append(current.get_data) # append the current element for output
-                current = current.get_next_node()   # move to the next node in deque
+                outputList.append(current.get_data()) # append the current element for output
+                current = current.get_next_node()     # move to the next node in deque
             return outputList   # return the list
         # might have to change this later so that it prints instead of returning a list
