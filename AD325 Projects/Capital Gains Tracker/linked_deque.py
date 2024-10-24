@@ -49,7 +49,8 @@ class LinkedDeque:
         if (self.head == self.tail):    # if the head is also the tail
             self.tail = None            # clear tail
         self.head = self.head.get_next_node()   # make head.next the new head
-        self.head.set_previous_node(None)       # clear new head's previous node
+        if self.head: # make sure head isn't none, cause that causes malarkey
+            self.head.set_previous_node(None)       # clear new head's previous node
 
     def remove_back(self):
         if (self.tail == self.head):    # if the tail is also the head
