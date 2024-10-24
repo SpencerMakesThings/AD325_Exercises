@@ -4,18 +4,15 @@ class DLNode:
         self.data_portion = data_portion    # the data the node holds
         self.next_node = next_node          # the next node in the list
         self.previous_node = previous_node  # the previous node in the list
-    def get_data(self):
-        return self.data_portion
-    def set_data(self, new_data):
-        self.data_portion = new_data
-    def get_next_node(self):
-        return self.next_node
-    def set_next_node(self, next_node):
-        self.next_node = next_node
-    def get_previous_node(self):
-        return self.previous_node
-    def set_previous_node(self, previous_node):
-        self.previous_node = previous_node
+
+    # all of these are self explanatory
+    def get_data(self):return self.data_portion
+    def set_data(self, new_data):self.data_portion = new_data
+    def get_next_node(self):return self.next_node
+    def set_next_node(self, next_node):self.next_node = next_node 
+    def get_previous_node(self):return self.previous_node
+    def set_previous_node(self, previous_node):self.previous_node = previous_node
+    
 
 class LinkedDeque:
     def __init__(self):
@@ -28,9 +25,10 @@ class LinkedDeque:
             self.tail = new_node    # make the new node the tail
             self.head = new_node    # and make it the head too
         # make a new DL node and set it's prev to be the current tail
-        new_node = DLNode(previous_node = self.tail, data_portion = new_entry)
-        self.tail.set_next_node(new_node)   # link the current tail.next to the new node
-        self.tail = new_node                # make the new node the new tail
+        else: # need to add an else here or it makes 2 nodes oops
+            new_node = DLNode(previous_node = self.tail, data_portion = new_entry)
+            self.tail.set_next_node(new_node)   # link the current tail.next to the new node
+            self.tail = new_node                # make the new node the new tail
 
     def add_to_front(self, new_entry):
         if self.is_empty():         # if there are no nodes in the list
@@ -79,3 +77,12 @@ class LinkedDeque:
                 current = current.get_next_node()     # move to the next node in deque
             return outputList   # return the list
         # might have to change this later so that it prints instead of returning a list
+    
+    # Some Extra Methods:
+    def size(self):
+        count = 0           # an int to count with
+        current = self.head # a pointer to travers the deque
+        while current:      # while there are nodes left
+            count +=1       # count em and move the pointer
+            current = current.get_next_node()
+        return count    # return the count
