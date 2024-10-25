@@ -87,3 +87,5 @@ class LinkedDeque:
             count +=1       # count em and move the pointer
             current = current.get_next_node()
         return count    # return the count
+    
+    # I should've been a history major

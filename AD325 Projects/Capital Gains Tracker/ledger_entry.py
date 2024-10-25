@@ -44,3 +44,4 @@ class LedgerEntry:
     def get_deque(self): return self.deque
     def get_symbol(self): return self.stock_symbol
     def get_deque_size(self): return self.deque.size()
+    # the error that's being throw is for this stupid thing, which is on the repo. There's no reason it shouldn't work as is on the repo

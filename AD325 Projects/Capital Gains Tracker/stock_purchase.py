@@ -8,3 +8,4 @@ class StockPurchase:
     # New methods
     def get_cost(self): return self.cost_per_share
     def get_symbol(self): return self.stock_symbol
+    # this should all work but I'm putting comments on shit to see if it registers that these files have changed

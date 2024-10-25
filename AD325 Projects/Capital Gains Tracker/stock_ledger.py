@@ -66,3 +66,4 @@ class StockLedger:
         deque = entry.get_deque() # get the LE we're looking for
         if deque: return deque.size() # use the size() method from LD to check deque length
         return 0    # if it's not there return 0
+# a comment so that github will stop throwing errors?
